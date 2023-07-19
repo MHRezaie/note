@@ -1,3 +1,3 @@
-<?php  
-    echo 'test withoud sudo';
+<?php
+    echo "<h1>Test from php</h1>";
 ?>
