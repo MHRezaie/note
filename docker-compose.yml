@@ -6,7 +6,7 @@ networks:
 services:
   nginx:
     image: nginx:stable-alpine
-    container_name: nginx-template
+    container_name: nginx-note
     ports:
       - "80:80"
     volumes:
@@ -20,7 +20,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: mysql-template
+    container_name: mysql-note
     restart: unless-stopped
     tty: true
     ports:
@@ -41,7 +41,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: php-template
+    container_name: php-note
     volumes:
       - ./src:/var/www/html
     ports:
@@ -51,7 +51,7 @@ services:
 
   composer:
     image: composer:latest
-    container_name: composer-template
+    container_name: composer-note
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
@@ -61,7 +61,7 @@ services:
       - laravel
   npm:
     image: node:latest
-    container_name: npm-template
+    container_name: npm-note
     entrypoint: ['npm'] 
     volumes:
       - ./src:/var/www/html
@@ -72,7 +72,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: artisan-template
+    container_name: artisan-note
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
@@ -83,7 +83,7 @@ services:
       - laravel
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: phpmyadmin-template
+    container_name: phpmyadmin-note
     ports:
       - 9001:80
     environment:
