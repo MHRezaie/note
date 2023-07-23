@@ -1,3 +1,4 @@
+        </main>
         <footer class="footer mt-auto py-3 bg-secondary-subtle">
         <div class="container">
             <span class="text-body-secondary">تمامی حقوق محفوظ است.</span>

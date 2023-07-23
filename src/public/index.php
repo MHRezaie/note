@@ -1,7 +1,13 @@
 <?php
+
 $PATH=__DIR__;
 
 
-include("{$PATH}/../function.php");
+require 'function.php';
 
-dd($_SERVER['REQUEST_URI']);
+require("views/partials/head.php");
+require("views/partials/nav.php");
+
+require 'router.php';
+
+require("views/partials/footer.php");
