@@ -2,8 +2,8 @@
 return [
     "database"=>[
         "host"=>"mysql",
-        "host"=>3306,
+        "port"=>3306,
         "dbname"=>"note-db",
-        "charset"=>"utfmb4"
+        "charset"=>"utf8mb4"
     ]
-]
+    ];

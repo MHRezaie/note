@@ -2,7 +2,6 @@
 
 $PATH=__DIR__;
 
-
 require 'function.php';
 
 require("views/partials/head.php");
