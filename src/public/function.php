@@ -23,3 +23,6 @@ function isActive($navLink){
 function url_path(){
     return parse_url(uri())["path"];
 }
+function userId(){
+    return 1;
+}
