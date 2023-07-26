@@ -4,6 +4,7 @@
             <span class="text-body-secondary">تمامی حقوق محفوظ است.</span>
         </div>
         </footer>
-        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        
     </body>
 </html>

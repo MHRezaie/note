@@ -18,7 +18,7 @@ class DataBase{
     public function find(){
         return $this->stmt->fetch();
     }
-    public function findAll(){
+    public function get(){
         return $this->stmt->fetchAll();
     }
     public function findOrFail(){

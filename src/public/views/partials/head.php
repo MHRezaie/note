@@ -1,5 +1,4 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="rtl" class="h-100" data-bs-theme="auto">
   <head>
     <meta charset="utf-8">
@@ -7,8 +6,8 @@
     <meta name="description" content="Note taking app">
     <meta name="author" content="M.H.Rezaie">
     <title>Take Note</title>
-    <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link rel="icon" href="assets/images/icon.png">
+    <link href="/assets/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="icon" href="/public/assets/images/icon.png">
     <!-- Custom styles for this template -->
     <style>
         main > .container {
