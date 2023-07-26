@@ -2,6 +2,7 @@
 
 class DataBase{
     public $connection;
+    protected $stmt;
 
     public function __construct($config,$username,$password){
         $this->connection=new PDO("mysql:".http_build_query($config,'',';'),$username,$password,[
@@ -10,8 +11,20 @@ class DataBase{
     }
     
     public function query($str,$params=[]){
-        $stmt=$this->connection->prepare($str);
-        $stmt->execute($params);
-        return $stmt;
+        $this->stmt=$this->connection->prepare($str);
+        $this->stmt->execute($params);
+        return $this;
+    }
+    public function find(){
+        return $this->stmt->fetch();
+    }
+    public function findAll(){
+        return $this->stmt->fetchAll();
+    }
+    public function findOrFail(){
+        $result=$this->find();
+        if($result)
+            return $result;
+        abort();
     }
 }
