@@ -26,3 +26,8 @@ function url_path(){
 function userId(){
     return 1;
 }
+function authorize($condition,$status=Response::FORBIDDEN){
+    if(!$condition){
+        abort($status);
+    }
+}

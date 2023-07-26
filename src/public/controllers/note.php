@@ -9,8 +9,7 @@ $db=new DataBase($conf['database'],"admin","secret");
 $note=$db->query("select * from notes where user_id=:userId and id=:id",
                 ["userId"=>userId(),"id"=>$id]
 )->findOrFail();
-if($note['user_id']!==userId()){
-    abort(Response::FORBIDDEN);
-}
+
+authorize($note['user_id']===userId());
 require "views/note.view.php";
 

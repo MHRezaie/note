@@ -1,7 +1,6 @@
 <?php
 $page="یادداشت";
-
-
+authorize(userId()!==null);
 require("DataBase.php");
 $conf=require("config.php");
 
