@@ -3,7 +3,7 @@
 require("views/partials/head.php");
 require("views/partials/nav.php");
 ?>
-<div class="pt-5 d-flex flex-column  col-md-10 mx-auto">
+<div class="py-5 d-flex flex-column  col-md-10 mx-auto">
     <div class="d-flex pb-2 justify-content-end">
             <a href="/notes/create" class="btn btn-outline-primary border-0">
                 یادداشت جدید
