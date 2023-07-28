@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($noteBody)){
         $db->query("insert into notes(body,user_id) values (:body, :user_id)",
             [
-                "body"=>$noteBody,
+                "body"=>htmlspecialchars($noteBody),
                 "user_id"=>userId()
             ]
         );

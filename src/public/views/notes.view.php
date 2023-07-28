@@ -24,7 +24,7 @@ require("views/partials/nav.php");
                 <?php echo $key+1?>
             </div>
             <div class="w-100 py-3 text-center border-bottom  ">
-                <?php echo $note["body"]?>
+                <?php echo htmlspecialchars( $note["body"])?>
             </div>
         </div>
     </a>
