@@ -1,3 +1,7 @@
+<?php
+require("views/partials/head.php");
+require("views/partials/nav.php");
+?>
 <div class="pt-5 d-flex flex-column  w-75 mx-auto">
     <div class="d-flex pb-2 justify-content-end">
             <a href="/notes" class="btn text-primary border-0">
@@ -22,3 +26,5 @@
         </div>
     </div>
 </div>
+
+<?php require("views/partials/footer.php");?>
