@@ -3,15 +3,12 @@ require("DataBase.php");
 $errors=[];
 $noteBody="";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $noteBody=$_POST['noteBody'];
+    $noteBody=trim($_POST['noteBody']);
     $conf=require("config.php");
     $db=new DataBase($conf["database"],'admin','secret');
-    
-    if(isset($noteBody)){
-        $errors[]="متن نمی‌تواند خالی باشد.";
-    }
-    if(strlen($noteBody)>1023){
-        $errors[]="طول متن بیشتر از حد مجاز(۱۰۲۳ کاراکتر) است.";
+    $min=1;$max=1023;
+    if(!Validator::string($noteBody,$min,$max)){
+        $errors[]="طول متن باید در محدوده {$min} تا {$max} کاراکتر باشد.";
     }
     if(!$errors){
         $db->query("insert into notes(body,user_id) values (:body, :user_id)",
