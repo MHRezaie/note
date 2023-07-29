@@ -10,5 +10,7 @@ $note=$db->query("select * from notes where user_id=:userId and id=:id",
 )->findOrFail();
 
 authorize($note['user_id']===userId());
-require base_path("views/notes/note.view.php");
+view("notes/note.view.php",[
+    "note"=>$note
+]);
 

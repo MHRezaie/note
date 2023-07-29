@@ -22,5 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-require base_path("views/notes/create.view.php");
+view("notes/create.view.php",[
+    "errors"=>$errors,
+    "noteBody"=>$noteBody
+]);
 

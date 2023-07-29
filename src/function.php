@@ -2,9 +2,9 @@
 function base_path($path){
     return BASE_PATH.$path;
 }
-function includeFiles($dir){
-    $base=base_name();
-    return include("{$base}{$dir}");
+function view($path,$attr=[]){
+    extract($attr);
+    require base_path('views/'.$path);
 }
 function uri(){
     return $_SERVER["REQUEST_URI"];

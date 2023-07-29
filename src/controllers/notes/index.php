@@ -7,6 +7,9 @@ $db=new DataBase($conf['database'],"admin","secret");
 
 $notes=$db->query("select * from notes where user_id=:userId",["userId"=>userId()])->get();
 
-require base_path("views/notes/index.view.php");
+view("notes/index.view.php",[
+    "notes"=>$notes,
+    "page"=>$page
+]);
 
 
