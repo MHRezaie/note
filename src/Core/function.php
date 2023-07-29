@@ -1,4 +1,5 @@
 <?php
+use Core\Response;
 function base_path($path){
     return BASE_PATH.$path;
 }

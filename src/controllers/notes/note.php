@@ -1,5 +1,6 @@
 <?php
 
+use Core\DataBase;
 $id=$_GET['id'];
 $conf=require base_path("config.php");
 

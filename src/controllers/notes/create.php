@@ -1,5 +1,6 @@
 <?php
-
+use Core\Validator;
+use Core\DataBase;
 $errors=[];
 $noteBody="";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

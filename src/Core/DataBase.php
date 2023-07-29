@@ -1,5 +1,6 @@
 <?php
-
+namespace Core;
+use PDO;
 class DataBase{
     public $connection;
     protected $stmt;

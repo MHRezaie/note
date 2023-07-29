@@ -1,4 +1,5 @@
 <?php
+use Core\DataBase;
 $page="یادداشت";
 authorize(userId()!==null);
 $conf=require base_path("config.php");
