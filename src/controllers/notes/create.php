@@ -1,10 +1,10 @@
 <?php
-require("DataBase.php");
+
 $errors=[];
 $noteBody="";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $noteBody=trim($_POST['noteBody']);
-    $conf=require("config.php");
+    $conf=require base_path("config.php");
     $db=new DataBase($conf["database"],'admin','secret');
     $min=1;$max=1023;
     if(!Validator::string($noteBody,$min,$max)){
@@ -22,5 +22,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-require "views/noteCreate.view.php";
+require base_path("views/notes/create.view.php");
 

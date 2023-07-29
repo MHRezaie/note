@@ -1,6 +1,6 @@
 <?php
-require("views/partials/head.php");
-require("views/partials/nav.php");
+require base_path("views/partials/head.php");
+require base_path("views/partials/nav.php");
 ?>
 
 <div class="container col-md-6" >
@@ -19,4 +19,4 @@ require("views/partials/nav.php");
         </div>
     <?php endforeach?>
 </div>
-<?php require("views/partials/footer.php");?>
+<?php require base_path("views/partials/footer.php");?>

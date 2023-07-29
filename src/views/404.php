@@ -1,3 +1,9 @@
+<?php
+require base_path("views/partials/head.php");
+require base_path("views/partials/nav.php");
+?>
+
+
 <div class="container">
 
     <div class="d-flex align-items-center justify-content-center flex-column pt-5" >
@@ -6,3 +12,5 @@
         <a class="p-2 m-2 btn btn-primary btn-lg rounded-2" href="/">بازگشت به صفحه اصلی</a>
     </div>
 </div>
+
+<?php require base_path("views/partials/footer.php");?>

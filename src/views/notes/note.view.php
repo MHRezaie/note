@@ -1,6 +1,6 @@
 <?php
-require("views/partials/head.php");
-require("views/partials/nav.php");
+require base_path("views/partials/head.php");
+require base_path("views/partials/nav.php");
 ?>
 <div class="pt-5 d-flex flex-column  w-75 mx-auto">
     <div class="d-flex pb-2 justify-content-end">
@@ -27,4 +27,4 @@ require("views/partials/nav.php");
     </div>
 </div>
 
-<?php require("views/partials/footer.php");?>
+<?php require base_path("views/partials/footer.php");?>

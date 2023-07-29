@@ -1,6 +1,6 @@
 <?php
-function base_name(){
-    return __DIR__;
+function base_path($path){
+    return BASE_PATH.$path;
 }
 function includeFiles($dir){
     $base=base_name();
