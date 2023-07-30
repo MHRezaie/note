@@ -4,7 +4,7 @@ require base_path("views/partials/nav.php");
 ?>
 
 <div class="container col-md-6" >
-    <form class="d-flex flex-column mx-auto  border rounded px-4 py-2 border-0" method="POST" >
+    <form class="d-flex flex-column mx-auto  border rounded px-4 py-2 border-0" method="POST" action="/notes" >
         <label class="text-primary mb-3" for="exampleFormControlTextarea1">> یادداشت جدید</label>
         <textarea maxlength="1023" class="form-control w-100  shadow" name="noteBody" id="exampleFormControlTextarea1" rows="10" placeholder="وارد نمایید..."
         ><?php if($noteBody) echo $noteBody;?></textarea>

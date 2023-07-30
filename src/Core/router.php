@@ -1,6 +1,6 @@
 <?php
 
-$path=parse_url(uri())["path"];
+
 $routes=require base_path("routes.php");
 
 function routeToController($uri,$routes){
