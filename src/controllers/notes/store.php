@@ -2,14 +2,16 @@
 
 use Core\Validator;
 use Core\DataBase;
+use Core\App;
 
 $errors=[];
 $noteBody="";
 
 
 $noteBody=trim($_POST['noteBody']);
-$conf=require base_path("config.php");
-$db=new DataBase($conf["database"],'admin','secret');
+
+$db=App::resolve(DataBase::class);
+
 $min=1;$max=1023;
 if(!Validator::string($noteBody,$min,$max)){
     $errors[]="طول متن باید در محدوده {$min} تا {$max} کاراکتر باشد.";

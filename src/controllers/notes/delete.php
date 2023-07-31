@@ -1,10 +1,10 @@
 <?php
 
 use Core\DataBase;
-
+use Core\App;
 $id=trim($_POST["id"]);
-$conf=require base_path("config.php");
-$db=new DataBase($conf["database"],'admin','secret');
+
+$db=App::resolve(DataBase::class);
 
 $db->query("DELETE FROM notes where id=:id",
     [

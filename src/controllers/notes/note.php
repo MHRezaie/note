@@ -1,11 +1,11 @@
 <?php
 
 use Core\DataBase;
+use Core\App;
 $id=$_GET['id'];
-$conf=require base_path("config.php");
 
+$db=App::resolve(DataBase::class);
 
-$db=new DataBase($conf['database'],"admin","secret");
 $note=$db->query("select * from notes where user_id=:userId and id=:id",
                 ["userId"=>userId(),"id"=>$id]
 )->findOrFail();
