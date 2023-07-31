@@ -21,22 +21,22 @@ require base_path("views/partials/nav.php");
         <div class="px-3 py-5 ">
             <p class="py-3"><?php echo $note["id"]?></p>
         </div>
-        <div class="w-100 py-5 text-center ">
+        <div class="w-100 py-5 text-center d-flex flex-column">
             <form method="POST" id="note-textarea" >
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="id" value="<?php echo $note["id"]; ?>">
-                <textarea  id="noteBody" name="noteBody" class="py-3 w-100 text-center border-3 border-secondary-subtle " rows="4"><?php echo $note["body"]?></textarea>
+                <textarea  id="noteBody" name="noteBody" class="py-3 w-100 text-center shadow-sm bg-secondary-subtle rounded border-0 " rows="4"><?php echo $note["body"]?></textarea>
             </form>
+            <div class="d-flex justify-content-md-end justify-content-center  align-self-md-left  my-3">
+                <form method="POST" class=" mx-1" >
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $note["id"]; ?>">
+                    <input type="submit" class="btn btn-danger px-3" value="حذف" />
+                </form>
+                <input type="submit" form="note-textarea" class="btn btn-success px-3 mx-1"  value="ویرایش">
+            </div>
         </div>
         
-    </div>
-    <div class="d-flex justify-content-md-end justify-content-center ">
-        <form method="POST" class=" mx-1" >
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="id" value="<?php echo $note["id"]; ?>">
-            <input type="submit" class="btn btn-danger px-3" value="حذف" />
-        </form>
-        <input type="submit" form="note-textarea" class="btn btn-success px-3 mx-1"  value="ویرایش">
     </div>
 </div>
 
