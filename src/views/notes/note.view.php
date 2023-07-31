@@ -23,7 +23,7 @@ require base_path("views/partials/nav.php");
         </div>
         <div class="w-100 py-4 text-center d-flex flex-column">
             <form method="POST" id="note-textarea" >
-                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="id" value="<?php echo $note["id"]; ?>">
                 <textarea  id="noteBody" name="noteBody" class="py-3 w-100 text-center shadow-sm bg-secondary-subtle rounded border-0 " rows="4"><?php echo $note["body"]?></textarea>
             </form>
