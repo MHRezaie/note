@@ -12,6 +12,7 @@ $note=$db->query("select * from notes where user_id=:userId and id=:id",
 
 authorize($note['user_id']===userId());
 view("notes/note.view.php",[
-    "note"=>$note
+    "note"=>$note,
+    "errors"=>[]
 ]);
 

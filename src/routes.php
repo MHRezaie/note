@@ -18,6 +18,7 @@ $router->get("/notes/create","controllers/notes/create.php");
 $router->post("/notes","controllers/notes/store.php");
 
 $router->get("/note","controllers/notes/note.php");
+$router->put("/note","controllers/notes/update.php");
 //     "/about"=>"controllers/about.php",
 //     "/contact"=>"controllers/contact.php",
 //     "/notes"=>"controllers/notes/index.php",

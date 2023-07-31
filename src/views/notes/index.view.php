@@ -3,7 +3,7 @@
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
 ?>
-<div class="py-5 d-flex flex-column  col-md-8 mx-auto">
+<div class="py-5 d-flex flex-column  col-md-8 mx-auto ">
     <div class="d-flex pb-2 justify-content-end">
             <a href="/notes/create" class="btn btn-outline-primary border-0">
                 یادداشت جدید
@@ -23,7 +23,7 @@ require base_path("views/partials/nav.php");
             <div class="px-3 py-3 border-bottom ">
                 <?php echo $key+1?>
             </div>
-            <div class="w-100 py-3  border-bottom">
+            <div class="w-100 py-3  border-bottom overflow-auto">
                 <?php echo htmlspecialchars( $note["body"])?>
             </div>
         </div>

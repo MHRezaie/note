@@ -18,10 +18,10 @@ require base_path("views/partials/nav.php");
     </div>
     
     <div class="d-flex justify-content-center">
-        <div class="px-3 py-5 ">
+        <div class="px-3 py-4">
             <p class="py-3"><?php echo $note["id"]?></p>
         </div>
-        <div class="w-100 py-5 text-center d-flex flex-column">
+        <div class="w-100 py-4 text-center d-flex flex-column">
             <form method="POST" id="note-textarea" >
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="id" value="<?php echo $note["id"]; ?>">
@@ -35,9 +35,15 @@ require base_path("views/partials/nav.php");
                 </form>
                 <input type="submit" form="note-textarea" class="btn btn-success px-3 mx-1"  value="ویرایش">
             </div>
+            
         </div>
         
     </div>
+    <?php foreach ($errors as $err):?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $err;?>
+        </div>
+    <?php endforeach?>
 </div>
 
 <?php require base_path("views/partials/footer.php");?>
