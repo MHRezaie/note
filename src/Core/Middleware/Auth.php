@@ -1,10 +1,10 @@
 <?php
 
-namespace Core\middleware
+namespace Core\middleware;
 
 class Auth{
-    public function handle{
-        if(! $_SESSION['user']?? false){
+    public function handle(){
+        if(!isset( $_SESSION['user'])){
             header('location: /');
             exit();
         }

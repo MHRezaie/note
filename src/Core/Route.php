@@ -1,7 +1,7 @@
 <?php 
 
 namespace Core;
-
+use Core\Middleware\Middleware;
 class Route{
     protected $routes=[];
 
@@ -32,7 +32,7 @@ class Route{
     public function route($uri,$method){
         foreach($this->routes as $route){
             if($route['uri']===$uri && $route['method']===strtoupper($method)){
-                
+                Middleware::resolve($route['middleware']);
                 return require base_path($route['controller']);
             }
         }

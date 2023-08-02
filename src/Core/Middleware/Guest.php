@@ -1,10 +1,10 @@
 <?php
 
-namespace Core\middleware
+namespace Core\middleware;
 
 class Guest{
-    public function handle{
-        if($_SESSION['user']?? false){
+    public function handle(){
+        if($_SESSION['user'] ?? false){
             header('location: /');
             exit();
         }
