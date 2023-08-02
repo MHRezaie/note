@@ -5,7 +5,7 @@ require base_path("views/partials/nav.php");
 ?>
 <div class="py-5 d-flex flex-column  col-md-8 mx-auto ">
     <div class="d-flex pb-2 justify-content-end">
-            <a href="/notes/create" class="btn btn-outline-primary border-0">
+            <a href="/notes/create" class="btn btn-primary ">
                 یادداشت جدید
             </a>
     </div>
