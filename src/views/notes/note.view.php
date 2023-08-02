@@ -4,7 +4,7 @@ require base_path("views/partials/nav.php");
 ?>
 <div class="pt-5 d-flex flex-column col-md-8  mx-auto">
     <div class="d-flex pb-2 justify-content-end">
-            <a href="/notes" class="btn text-primary border-0">
+            <a href="/notes" class="btn btn-outline-secondary border-0 fw-bold">
                 بازگشت
             </a>
     </div>
