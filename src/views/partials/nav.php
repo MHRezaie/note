@@ -22,11 +22,11 @@
           </li>
         </ul>
         <div class="" class="login">
-          <button class="btn btn-outline-warning" >ورود</button>
-          <button class="btn btn-outline-success mx-2" >عضویت</button>
+          <a class="btn btn-outline-warning" href="/sessions" >ورود</a>
+          <a class="btn btn-outline-success mx-2" href="/register" >عضویت</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
-<main class="pt-4 mt-5 px-5">
+<main class="pt-4 mt-5 px-2 px-md-5 ">

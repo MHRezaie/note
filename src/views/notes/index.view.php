@@ -9,21 +9,21 @@ require base_path("views/partials/nav.php");
                 یادداشت جدید
             </a>
     </div>
-    <div class="d-flex justify-content-center ">
-        <div class="px-3 py-2 border-bottom border-top border-3 font-weight-bold">
+    <div class="d-flex justify-content-center bg-dark text-light rounded ">
+        <div class="px-3 py-2 border-bottom border-top border-3 font-weight-bold justify">
         #
         </div>
-        <div class="w-100 py-2 border-bottom  border-top border-3 font-weight-bold">
+        <div class="w-100 py-2 border-bottom  border-top border-3 font-weight-bold text-center">
             متن
         </div>
     </div>
     <?php foreach($notes as $key=>$note):?>
-    <a class="btn btn-outline-warning  border-0 text-dark" href="/note?id=<?php echo $note["id"]?>">
+    <a class="btn btn-outline-light text-dark border-bottom border-0" href="/note?id=<?php echo $note["id"]?>">
         <div class="d-flex justify-content-center">
-            <div class="px-3 py-3 border-bottom ">
+            <div class="px-3 py-3 ">
                 <?php echo $key+1?>
             </div>
-            <div class="w-100 py-3  border-bottom overflow-auto">
+            <div class="w-100 py-3   overflow-auto">
                 <?php echo htmlspecialchars( $note["body"])?>
             </div>
         </div>
