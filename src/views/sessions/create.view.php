@@ -14,7 +14,7 @@ require base_path("views/partials/nav.php");
 
               <h2 class="fw-bold mb-2 text-uppercase">ورود</h2>
               <p class="text-white-50 mb-3">اطلاعات خود را وارد نمایید:</p>
-            <form action="POST">
+            <form method="POST" id="loginForm">
               <div class="d-flex flex-row align-items-center mb-4">
                     <div class="col-1">
                         <img src="/assets/images/email.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
@@ -29,12 +29,12 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/lock.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-2">
-                        <input type="text" id="password" name="password" class="form-control form-control-lg" placeholder="رمزعبور"/>
+                        <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="رمزعبور"/>
                     </div>
               </div>
             </form>
             
-            <button class="btn btn-success btn-lg px-5" type="submit">ورود</button>
+            <button class="btn btn-success btn-lg px-5" type="submit" form="loginForm">ورود</button>
             <p class="small mb-2 pb-lg-2"><a class="text-dark" href="#!">فراموشی رمزعبور</a></p>
 
             </div>
