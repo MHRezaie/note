@@ -1,6 +1,11 @@
 <?php
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
+
+$firstName=isset($_POST['firstName']) ? $_POST['firstName']:'';
+$lastName=isset($_POST['lastName']) ? $_POST['lastName']:'';
+$email=isset($_POST['email']) ? $_POST['email']:'';
+
 ?>
 
 
@@ -13,14 +18,15 @@ require base_path("views/partials/nav.php");
             <div class="row justify-content-center">
             <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-4">عضویت</p>
 
-            <form class="mx-1 mx-md-4">
+            <form class="mx-1 mx-md-4" method="POST" action="#error">
 
                 <div class="d-flex flex-row align-items-center mb-4 ">
                     <div class="col-1">
                         <img src="/assets/images/user.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3 ">
-                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="نام"/>
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="نام"
+                        value="<?php echo $firstName;?>"/>
                     </div>
                 </div>
 
@@ -29,7 +35,8 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/user.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3 ">
-                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="نام‌خانوادگی"/>
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="نام‌خانوادگی"
+                        value="<?php echo $lastName;?>"/>
                     </div>
                 </div>
 
@@ -38,7 +45,8 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/email.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3">
-                        <input type="text" id="email" name="email" class="form-control" placeholder="ایمیل"/>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="ایمیل"
+                        value="<?php echo $email;?>"/>
                     </div>
                 </div>
 
@@ -47,7 +55,7 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/lock.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3">
-                    <input type="password" id="password" name="password" class="form-control" placeholder="رمز عبور" />
+                    <input type="password" id="password" name="password" class="form-control" placeholder="رمز عبور (حداقل ۶ حرف)" />
                   </div>
                 </div>
 
@@ -73,9 +81,16 @@ require base_path("views/partials/nav.php");
             </div>
         </div>
     </div>
-    <div class="alert alert-danger mt-3">error</div>
+    <?php if(isset($errors)):?>
+        <?php foreach($errors as $err):?>
+            <div class="alert alert-danger mt-3" id="error">
+                <?php echo $err?>
+            </div>
+        <?php endforeach;?>
+    <?php endif; ?>
       </div>
     </div>
   </div>
 </section>
+
 <?php require base_path("views/partials/footer.php");?>
