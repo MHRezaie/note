@@ -20,7 +20,7 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/user.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3 ">
-                        <input type="text" id="form3Example1c" class="form-control" placeholder="نام"/>
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="نام"/>
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/user.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3 ">
-                        <input type="text" id="form3Example1c" class="form-control" placeholder="نام‌خانوادگی"/>
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="نام‌خانوادگی"/>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/email.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3">
-                        <input type="text" id="form3Example3c" class="form-control" placeholder="ایمیل"/>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="ایمیل"/>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/lock.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3">
-                    <input type="password" id="form3Example4c" class="form-control" placeholder="رمز عبور" />
+                    <input type="password" id="password" name="password" class="form-control" placeholder="رمز عبور" />
                   </div>
                 </div>
 
@@ -56,18 +56,18 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/key.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-3">
-                    <input type="password" id="form3Example4cd" class="form-control"  placeholder="تکرار رمزعبور" />
+                    <input type="password" id="passwordRepeat" name="passwordRepeat" class="form-control"  placeholder="تکرار رمزعبور" />
                 </div>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-4">
-                <label class="form-check-label" for="termsCheck">
-                    حساب کاربری دارید؟  <a href="/sessions">وارد شوید</a>
-                </label>
+                    <label class="form-check-label" >
+                        حساب کاربری دارید؟  <a href="/sessions">وارد شوید</a>
+                    </label>
                 </div>
 
                 <div class="d-flex justify-content-center mx-4 mb-1 mb-lg-1">
-                <button type="button" class="btn btn-primary btn-lg">عضویت</button>
+                <button type="submit"  class="btn btn-primary btn-lg" method="POST">عضویت</button>
                 </div>
             </form>
             </div>
