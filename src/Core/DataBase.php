@@ -1,6 +1,8 @@
 <?php
 namespace Core;
 use PDO;
+use Core\Route;
+
 class DataBase{
     public $connection;
     protected $stmt;
@@ -26,6 +28,6 @@ class DataBase{
         $result=$this->find();
         if($result)
             return $result;
-        abort();
+        Route::abort(403);
     }
 }

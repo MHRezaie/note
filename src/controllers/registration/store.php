@@ -44,7 +44,10 @@ $db->query("insert into users(FirstName,LastName,email,password)
         'password'=>password_hash($password,PASSWORD_BCRYPT)
     ]);
 
-$_SESSION['user']=htmlspecialchars( $email);
+login([
+    'email'=>$email
+]);
+
 header('Location: /');
 exit();
 

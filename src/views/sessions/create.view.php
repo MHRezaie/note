@@ -1,6 +1,8 @@
 <?php
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
+
+$email=isset($_POST['email'])?$_POST['email']:'';
 ?>
 
 <section class="h-100 d-flex align-items-center">
@@ -20,7 +22,9 @@ require base_path("views/partials/nav.php");
                         <img src="/assets/images/email.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
                     </div>
                     <div class="form-outline flex-fill mb-0 mx-2">
-                        <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="ایمیل"/>
+                        <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="ایمیل"
+                        value="<?php echo $email;?>"
+                        />
                     </div>
               </div>
               <div class="form-outline form-white mb-4">
@@ -48,8 +52,11 @@ require base_path("views/partials/nav.php");
         </div>
         
       </div>
-      
-      <div class="alert alert-danger">error</div>
+      <?php if(isset($errors)):?>
+        <?php foreach($errors as $err):?>
+          <div class="alert alert-danger"><?php echo $err;?></div>
+        <?php endforeach;?>
+      <?php endif;?>
     </div>
   </div>
 </section>
