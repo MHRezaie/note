@@ -26,6 +26,8 @@ $router->post("/register","controllers/registration/store.php");
 
 $router->get("/sessions","controllers/sessions/create.php")->only('Guest');
 $router->post("/sessions","controllers/sessions/store.php");
+$router->delete("/sessions","controllers/sessions/destroy.php");
+
 //     "/about"=>"controllers/about.php",
 //     "/contact"=>"controllers/contact.php",
 //     "/notes"=>"controllers/notes/index.php",
