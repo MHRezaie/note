@@ -3,11 +3,20 @@ use Core\Response;
 use Core\DataBase;
 use Core\App;
 
+function logout(){
+    $_SESSION=[];
+    session_destroy();
+    $params=session_get_cookie_params();
+
+    setcookie('PHPSESSID', '', time()-3600, $params['path'], $params['domain'], 
+    $params['secure'], $params['httponly']);
+}
 function login($arr){
     $db=App::resolve(DataBase::class);
     $user=$db->query("select * from users where email=:email",[
         'email'=>$arr['email']
     ])->find();
+    session_regenerate_id(true);
     $_SESSION['user']['email']=$arr['email'];
     $_SESSION['user']['id']=$user['id'];
 }
