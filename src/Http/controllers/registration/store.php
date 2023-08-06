@@ -3,6 +3,7 @@
 use Core\DataBase;
 use Core\App;
 use Core\Validator;
+use Core\Authenticator;
 
 $errors=[];
 $firstName=trim($_POST['firstName']);
@@ -43,11 +44,10 @@ $db->query("insert into users(FirstName,LastName,email,password)
         'email'=>htmlspecialchars($email),
         'password'=>password_hash($password,PASSWORD_BCRYPT)
     ]);
-
-login([
+$auth=new Authenticator();
+$user=$db->query("select id,email from users where email=:email",[
     'email'=>$email
-]);
+])->find();
+$auth->login($user);
 
-header('Location: /');
-exit();
-
+redirect("/");
