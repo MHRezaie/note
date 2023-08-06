@@ -1,33 +1,33 @@
 <?php 
 // return [
-//     "/"=>"controllers/index.php",
-//     "/about"=>"controllers/about.php",
-//     "/contact"=>"controllers/contact.php",
-//     "/notes"=>"controllers/notes/index.php",
-//     "/notes/create"=>"controllers/notes/create.php",
-//     "/note"=>"controllers/notes/note.php"
+//     "/"=>"index.php",
+//     "/about"=>"about.php",
+//     "/contact"=>"contact.php",
+//     "/notes"=>"notes/index.php",
+//     "/notes/create"=>"notes/create.php",
+//     "/note"=>"notes/note.php"
 // ];
 
 
-$router->get("/","controllers/index.php");
-$router->get("/about","controllers/about.php");
-$router->get("/contact","controllers/contact.php");
+$router->get("/","index.php");
+$router->get("/about","about.php");
+$router->get("/contact","contact.php");
 
-$router->get("/notes","controllers/notes/index.php")->only('Auth');
-$router->get("/notes/create","controllers/notes/create.php")->only('Auth');
-$router->post("/notes","controllers/notes/store.php");
+$router->get("/notes","notes/index.php")->only('Auth');
+$router->get("/notes/create","notes/create.php")->only('Auth');
+$router->post("/notes","notes/store.php");
 
-$router->get("/note","controllers/notes/note.php")->only('Auth');
-$router->patch("/note","controllers/notes/update.php");
-$router->delete("/note","controllers/notes/delete.php");
+$router->get("/note","notes/note.php")->only('Auth');
+$router->patch("/note","notes/update.php");
+$router->delete("/note","notes/delete.php");
 
-$router->get("/register","controllers/registration/create.php")->only('Guest');
-$router->post("/register","controllers/registration/store.php");
+$router->get("/register","registration/create.php")->only('Guest');
+$router->post("/register","registration/store.php");
 
-$router->get("/sessions","controllers/sessions/create.php")->only('Guest');
-$router->post("/sessions","controllers/sessions/store.php");
-$router->delete("/sessions","controllers/sessions/destroy.php");
+$router->get("/sessions","sessions/create.php")->only('Guest');
+$router->post("/sessions","sessions/store.php");
+$router->delete("/sessions","sessions/destroy.php");
 
-//     "/about"=>"controllers/about.php",
-//     "/contact"=>"controllers/contact.php",
-//     "/notes"=>"controllers/notes/index.php",
+//     "/about"=>"about.php",
+//     "/contact"=>"contact.php",
+//     "/notes"=>"notes/index.php",

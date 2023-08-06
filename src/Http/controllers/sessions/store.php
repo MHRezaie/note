@@ -5,10 +5,10 @@ use Core\Validator;
 use Core\DataBase;
 use Core\App;
 
-$errors=[];
 $email=trim($_POST['email']);
 $password=trim($_POST['password']);
 
+$errors=[];
 if(!Validator::email($email)){
     $errors[]="ایمیل نامعتبر است.";
 }
@@ -32,7 +32,7 @@ $user=$db->query("select * from users where email=:email",[
 if($user){
     
     if(password_verify($password,$user['password'])){
-        login([
+        login([ 
             'email'=>$email
         ]);
         header('Location: /');
