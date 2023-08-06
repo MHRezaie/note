@@ -2,7 +2,8 @@
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
 
-$email=isset($_POST['email'])?$_POST['email']:'';
+use Core\Session;
+$email=old('email');
 ?>
 
 <section class="h-100 d-flex align-items-center">
@@ -52,8 +53,8 @@ $email=isset($_POST['email'])?$_POST['email']:'';
         </div>
         
       </div>
-      <?php if(isset($errors)):?>
-        <?php foreach($errors as $err):?>
+      <?php if(Session::has('errors')):?>
+        <?php foreach(Session::get('errors') as $err):?>
           <div class="alert alert-danger"><?php echo $err;?></div>
         <?php endforeach;?>
       <?php endif;?>

@@ -2,7 +2,12 @@
 use Core\Response;
 use Core\DataBase;
 use Core\App;
+use Core\Session;
 
+
+function old($key,$default=''){
+    return Core\Session::get('old')[$key] ?? $default;
+}
 
 function redirect($path){
     header("Location: {$path}");
