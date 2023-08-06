@@ -11,17 +11,10 @@ function logout(){
     setcookie('PHPSESSID', '', time()-3600, $params['path'], $params['domain'], 
     $params['secure'], $params['httponly']);
 }
-function login($arr){
-    $db=App::resolve(DataBase::class);
-    $user=$db->query("select * from users where email=:email",[
-        'email'=>$arr['email']
-    ])->find();
-    session_regenerate_id(true);
-    $_SESSION['user']['email']=$arr['email'];
-    $_SESSION['user']['id']=$user['id'];
+function redirect($path){
+    header("Location: {$path}");
+    exit();
 }
-
-
 function base_path($path){
     return BASE_PATH.$path;
 }
