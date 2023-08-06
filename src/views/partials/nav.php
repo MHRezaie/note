@@ -17,9 +17,10 @@
           <li class="nav-item">
             <a class="nav-link <?php echo isActive("/contact");?>" href="/contact">تماس‌ با ما</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo isActive("/notes");?>" href="/notes">یادداشت</a>
-          </li>
+          <?php if(isset($_SESSION['user'])):?>
+              <a class="nav-link <?php echo isActive("/notes");?>" href="/notes">یادداشت‌ها</a>
+            </li>
+          <?php endif;?>
         </ul>
         <?php if(isset($_SESSION['user'])):?>
           <form action="/sessions" method="POST" >
