@@ -9,25 +9,19 @@ $password=trim($_POST['password']);
 
 $errors=[];
 
-$form=new LoginForm();
 
-if($form->validate($email,$password)){
-   if((new Authenticator())->attempt($email,$password)){
-        redirect("/");
-    }
-    $form->error("ایمیل یا رمز عبور اشتباه است.");
+$form=LoginForm::validate([
+    'email'=>$email,
+    'password'=>$password
+]);
+
+$logedin=(new Authenticator())->attempt($email,$password);
+
+if(!$logedin){
+    $form->error("ایمیل یا رمز عبور اشتباه است.")->throw();    
 }
 
+redirect("/");
 
-
-Session::flash("errors",
-    $form->errors()
-);
-Session::flash("old",
-    [
-        "email"=>$email
-    ]
-);
-redirect("/sessions");
 
 
