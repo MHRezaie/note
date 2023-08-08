@@ -43,6 +43,7 @@ services:
       dockerfile: Dockerfile
     container_name: php-note
     volumes:
+      - /var/www/html/vendor
       - ./src:/var/www/html
     ports:
       - "9000:9000"
@@ -51,7 +52,7 @@ services:
 
   composer:
     image: composer:latest
-    container_name: composer-note
+    container_name: composer
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
