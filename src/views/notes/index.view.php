@@ -24,7 +24,10 @@ require base_path("views/partials/nav.php");
                 <?php echo $key+1?>
             </div>
             <div class="w-100 py-3   overflow-auto">
-                <?php echo htmlspecialchars( $note["body"])?>
+                <?php echo htmlspecialchars(mb_substr($note["body"],0,128));
+                    echo strlen($note["body"])>128 ?"...":"";
+                ?>
+
             </div>
         </div>
     </a>
