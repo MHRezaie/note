@@ -25,7 +25,9 @@ require base_path("views/partials/nav.php");
             <form method="POST" id="note-textarea" >
                 <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="id" value="<?php echo $note["id"]; ?>">
-                <textarea  id="noteBody" name="noteBody" class="py-3 w-100 text-center shadow-sm bg-white rounded border-0 " rows="4"><?php echo $note["body"]?></textarea>
+                <textarea  id="noteBody" name="noteBody" rows="8"
+                class="py-3 w-100 text-center shadow-sm bg-white rounded border-0" 
+                ><?php echo $note["body"]?></textarea>
             </form>
             <div class="d-flex justify-content-md-end justify-content-center  align-self-md-left  my-3">
                 <form method="POST" class=" mx-1" >
