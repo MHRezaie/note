@@ -11,6 +11,22 @@
     <link rel="icon" href="/public/assets/images/icon.png">
     <!-- Custom styles for this template -->
     <style>
+      /* .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }*/
+      /* @media screen and (min-width: 600px) {
+          .test{
+            border-right:0px solid;
+            border-left: 6px  solid;
+          }
+        }  */
         main > .container {
         padding: 60px 15px 0;
         }
