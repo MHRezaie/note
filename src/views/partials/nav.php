@@ -10,12 +10,6 @@
           <li class="nav-item">
             <a class="nav-link <?php echo isActive("/");?>" aria-current="page" href="/">خانه</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo isActive("/about");?>" href="/about">درباره</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo isActive("/contact");?>" href="/contact">تماس‌ با ما</a>
-          </li>
           <?php if(isset($_SESSION['user'])):?>
               <a class="nav-link <?php echo isActive("/notes");?>" href="/notes">یادداشت‌ها</a>
             </li>
