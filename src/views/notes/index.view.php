@@ -2,6 +2,7 @@
 <?php
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
+require base_path("views/partials/space.php");
 ?>
 <div class="py-5 d-flex flex-column  col-md-8 mx-auto ">
     <div class="d-flex pb-2 justify-content-end">

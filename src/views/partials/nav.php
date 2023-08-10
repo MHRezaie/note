@@ -1,6 +1,5 @@
-<header class="fixed-top">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
     <div class="container-fluid">
       <a class="" href="/" ><img  class="w-50" src="/assets/images/icon.png" alt="Note icon"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,5 +35,3 @@
       </div>
     </div>
   </nav>
-</header>
-<main class="pt-4 mt-5 px-2 px-md-5 ">
