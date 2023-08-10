@@ -1,6 +1,7 @@
 <?php
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
+require base_path("views/partials/space.php");
 ?>
 
 <div class="container col-md-6" >

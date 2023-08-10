@@ -1,6 +1,7 @@
 <?php
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
+require base_path("views/partials/space.php");
 
 $firstName=isset($_POST['firstName']) ? $_POST['firstName']:'';
 $lastName=isset($_POST['lastName']) ? $_POST['lastName']:'';

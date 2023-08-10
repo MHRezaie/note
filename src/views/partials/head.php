@@ -7,7 +7,7 @@
     <meta name="author" content="M.H.Rezaie">
     <title>Take Note</title>
     <link href="/assets/css/bootstrap.rtl.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="/public/assets/images/icon.png">
     <!-- Custom styles for this template -->
     <style>
@@ -29,6 +29,31 @@
         }  */
         main > .container {
         padding: 60px 15px 0;
+        }
+        .masthead {
+          min-height: 30rem;
+          position: relative;
+          display: table;
+          width: 100%;
+          padding-top: 8rem;
+          padding-bottom: 8rem;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/assets/images/bg-masthead.jpg");
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .masthead h1, .masthead .h1 {
+          font-size: 4rem;
+          margin: 0;
+          padding: 0;
+        }
+        @media (min-width: 992px) {
+          .masthead {
+            
+          }
+          .masthead h1, .masthead .h1 {
+            font-size: 5.5rem;
+          }
         }
     </style>
   </head>
