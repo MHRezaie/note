@@ -56,7 +56,7 @@ $email=old('email');
       </div>
       <?php if(Session::has('errors')):?>
         <?php foreach(Session::get('errors') as $err):?>
-          <div class="alert alert-danger"><?php echo $err;?></div>
+          <div class="alert alert-danger" id="errors"><?php echo $err;?></div>
         <?php endforeach;?>
       <?php endif;?>
     </div>
