@@ -28,7 +28,7 @@ try {
     Session::flash("old",
         $exception->old()
     );
-    return redirect($router->previousUrl());
+    redirect($router->previousUrl()."#errors");
 }
 
 Session::unflash();
