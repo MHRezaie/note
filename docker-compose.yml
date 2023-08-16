@@ -9,15 +9,23 @@ services:
     container_name: nginx-note
     ports:
       - "80:80"
+      - "443:443"
+    restart: always
     volumes:
       - ./src:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./data/certbot/www:/var/www/certbot/:ro
+      - ./data/certbot/conf/:/etc/nginx/ssl/:ro
     depends_on:
       - php
       - mysql
     networks:
       - laravel
-
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./data/certbot/www/:/var/www/certbot/:rw
+      - ./data/certbot/conf/:/etc/letsencrypt/:rw
   mysql:
     image: mysql:8.0
     container_name: mysql-note
