@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
@@ -54,7 +54,7 @@ services:
       - /var/www/html/vendor
       - ./src:/var/www/html
     ports:
-      - "9000:9000"
+      - "9001:9000"
     networks:
       - laravel
 
@@ -94,7 +94,7 @@ services:
     image: phpmyadmin:latest
     container_name: phpmyadmin-note
     ports:
-      - 9001:80
+      - 9002:80
     environment:
       - PMA_ARBITRARY=1
     depends_on:
