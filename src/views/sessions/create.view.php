@@ -7,7 +7,7 @@ use Core\Session;
 $email=old('email');
 ?>
 
-<section class="h-100 d-flex align-items-center">
+<section class="d-flex align-items-center">
   <div class="container py-4">
     <div class="row d-flex justify-content-center align-items-center ">
       <div class="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4">
