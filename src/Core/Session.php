@@ -17,7 +17,7 @@ class Session{
         return (bool)static::get($key);
     }
     public static function unflash(){
-        $_SESSION['_flash']=[];
+        unset($_SESSION['_flash']);
     }
     public static function flush(){
         $_SESSION=[];

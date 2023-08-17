@@ -11,9 +11,9 @@ class Authenticator{
         Session::destroy();
     }
     function login($user){
-        session_regenerate_id(true);
         $_SESSION['user']['email']=$user['email'];
         $_SESSION['user']['id']=$user['id'];
+        session_regenerate_id(true);
     }
 
     public function attempt($email,$password){

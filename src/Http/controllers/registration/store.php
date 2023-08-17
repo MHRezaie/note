@@ -30,7 +30,6 @@ $user=$db->query("select * from users where email=:email",[
     ])->find();
 if($user)
     $errors[]="ایمیل تکراری می‌باشد.";
-
 if(!empty($errors)){
     return view('registration/create.view.php',[
         'errors'=>$errors
