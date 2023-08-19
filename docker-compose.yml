@@ -45,6 +45,8 @@ services:
     volumes:
       - /var/www/html/vendor
       - ./src:/var/www/html
+      - ./data/php/php.ini.prod:/usr/local/etc/php/php.ini-production
+      - ./data/php/php.ini.dev:/usr/local/etc/php/php.ini-development
     ports:
       - "9000:9000"
     networks:
