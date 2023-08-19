@@ -2,9 +2,6 @@
 require base_path("views/partials/head.php");
 require base_path("views/partials/nav.php");
 require base_path("views/partials/space.php");
-
-use Core\Session;
-$email=old('email');
 ?>
 
 <section class="d-flex align-items-center">
@@ -54,8 +51,8 @@ $email=old('email');
         </div>
         
       </div>
-      <?php if(Session::has('errors')):?>
-        <?php foreach(Session::get('errors') as $err):?>
+      <?php if(isset($errors)):?>
+        <?php foreach($errors as $err):?>
           <div class="alert alert-danger" id="errors"><?php echo $err;?></div>
         <?php endforeach;?>
       <?php endif;?>

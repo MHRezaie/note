@@ -5,13 +5,11 @@ use Core\Session;
 use Core\ValidationException;
 
 const BASE_PATH=__DIR__."/../";
-require BASE_PATH.'Core/function.php';
-
-
-require base_path('/vendor/autoload.php');
-
-require base_path('bootstrap.php');
 session_start();
+
+require BASE_PATH.'Core/function.php';
+require base_path('/vendor/autoload.php');
+require base_path('bootstrap.php');
 
 $router=new Route();
 $routes=include base_path('routes.php');
@@ -30,7 +28,6 @@ try {
     );
     return redirect($router->previousUrl()."#errors");
 }
-
 Session::unflash();
 
 
