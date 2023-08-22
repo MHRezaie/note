@@ -19,7 +19,7 @@ $email=isset($_POST['email']) ? $_POST['email']:'';
             <div class="row justify-content-center">
             <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-4">عضویت</p>
 
-            <form class="mx-1 mx-md-4" method="POST" action="#error">
+            <form class="mx-1 mx-md-4" method="POST" action="/registration">
 
                 <div class="d-flex flex-row align-items-center mb-4 ">
                     <div class="col-1">

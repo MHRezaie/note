@@ -8,7 +8,7 @@
     <title>Take Note</title>
     <link href="/assets/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="/public/assets/images/icon.png">
+    <link rel="icon" href="/assets/images/icon.png">
     <!-- Custom styles for this template -->
     <style>
       /* .timeline::after {

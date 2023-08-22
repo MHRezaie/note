@@ -15,7 +15,7 @@ require base_path("views/partials/space.php");
 
               <h2 class="fw-bold mb-2 text-uppercase">ورود</h2>
               <p class="text-white-50 mb-3">اطلاعات خود را وارد نمایید:</p>
-            <form method="POST" id="loginForm">
+            <form method="POST" id="loginForm" action="/sessions">
               <div class="d-flex flex-row align-items-center mb-4">
                     <div class="col-1">
                         <img src="/assets/images/email.png" class="img-fluid col-sm-11 col-md-9 col-lg-8 col-xl-8" alt="">
