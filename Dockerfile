@@ -1,31 +1,16 @@
-FROM php:8-fpm
+FROM php:8-fpm-alpine
 
-WORKDIR /var/www/html
+ENV PHPGROUP=mhubuntu
+ENV PHPUSER=mhubuntu
 
-#RUN chown -R www-data:www-data /var/www/html/public
+RUN  adduser -g ${PHPGROUP} -s /bin/sh -D ${PHPUSER}
 
+RUN sed -i "s/user = www-data/user = ${PHPUSER}/g" /usr/local/etc/php-fpm.d/www.conf
+RUN sed -i "s/group = www-data/group = ${PHPGROUP}/g" /usr/local/etc/php-fpm.d/www.conf
+
+RUN mkdir -p /var/www/html/public
+
+RUN echo -e "http://nl.alpinelinux.org/alpine/v3.18/main\nhttp://nl.alpinelinux.org/alpine/v3.18/community" > /etc/apk/repositories 
 RUN docker-php-ext-install pdo pdo_mysql
 
-# allow super user - set this if you use Composer as a
-# super user at all times like in docker containers
-ENV COMPOSER_ALLOW_SUPERUSER=1
-
-# obtain composer using multi-stage build
-# https://docs.docker.com/build/building/multi-stage/
-COPY --from=composer:2.4 /usr/bin/composer /usr/bin/composer
-
-#Here, we are copying only composer.json and composer.lock (instead of copying the entire source)
-# right before doing composer install.
-# This is enough to take advantage of docker cache and composer install will
-# be executed only when composer.json or composer.lock have indeed changed!-
-# https://medium.com/@softius/faster-docker-builds-with-composer-install-b4d2b15d0fff
-COPY ./src/composer.* ./
-
-# install
-RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
-
-# copy application files to the working directory
-COPY ./src .
-
-# run composer dump-autoload --optimize
-RUN composer dump-autoload --optimize
+CMD [ "php-fpm", "-y", "/usr/local/etc/php-fpm.conf", "-R" ]
