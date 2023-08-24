@@ -7,6 +7,7 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx-note
+    restart: always
     ports:
       - "80:80"
     volumes:
@@ -21,7 +22,7 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql-note
-    restart: unless-stopped
+    restart: always
     tty: true
     ports:
       - "3306:3306"
@@ -42,6 +43,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: php-note
+    restart: always
     volumes:
       - /var/www/html/vendor
       - ./src:/var/www/html
