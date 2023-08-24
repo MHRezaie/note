@@ -21,7 +21,7 @@ class LoginForm extends \Http\Forms\Form{
         if(!Validator::string($attributes['password'],6,256))
             $this->error("طول رمز‌عبور حداقل ۶ حرف می‌باشد.")
 
-        if($password!==$attributes['reapetPassword'])
+        if($attributes['password']!==$attributes['reapetPassword'])
             $this->error("رمز عبور با تکرار آن یکسان نمی‌باشد.");
 
     }
