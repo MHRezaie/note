@@ -18,22 +18,20 @@ services:
       - ./src:/var/www/html:delegated
     depends_on:
       - php
-      - redis
       - mysql
-      - mailhog
     networks:
       - laravel
 
   mysql:
-    image: mariadb:10.6
+    image: mysql:8.0
     container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: homestead
-      MYSQL_USER: homestead
+      MYSQL_DATABASE: note-db
+      MYSQL_USER: admin
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
@@ -54,14 +52,16 @@ services:
     networks:
       - laravel
 
-  redis:
-    image: redis:alpine
-    container_name: redis
-    restart: unless-stopped
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
     ports:
-      - 6379:6379
-    networks:
-      - laravel
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - mysql
 
   composer:
     build:
@@ -80,42 +80,4 @@ services:
     entrypoint: ['composer', '--ignore-platform-reqs']
     networks:
       - laravel
-
-  npm:
-    image: node:13.7
-    container_name: npm
-    volumes:
-      - ./src:/var/www/html
-    ports:
-      - 3000:3000
-      - 3001:3001
-    working_dir: /var/www/html
-    entrypoint: ['npm']
-    networks:
-      - laravel
-
-  artisan:
-    build:
-      context: ./dockerfiles
-      dockerfile: php.dockerfile
-      args:
-        - UID=${UID:-1000}
-        - GID=${GID:-1000}
-    container_name: artisan
-    volumes:
-      - ./src:/var/www/html:delegated
-    depends_on:
-      - mysql
-    working_dir: /var/www/html
-    entrypoint: ['php', '/var/www/html/artisan']
-    networks:
-      - laravel
-
-  mailhog:
-    image: mailhog/mailhog:latest
-    container_name: mailhog
-    ports:
-      - 1025:1025
-      - 8025:8025
-    networks:
-      - laravel
+    
