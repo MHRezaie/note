@@ -1,7 +1,5 @@
 version: '3'
 
-networks:
-  note:
 
 services:
   nginx:
@@ -17,8 +15,7 @@ services:
     depends_on:
       - php
       - mysql
-    networks:
-      - note
+    
 
   mysql:
     image: mysql:8.0
@@ -36,8 +33,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
-    networks:
-      - note
+    
 
   php:
     build:
@@ -49,5 +45,3 @@ services:
       - "9000:9000"
     volumes:
       - ./src:/var/www/html
-    networks:
-      - note
