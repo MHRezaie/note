@@ -105,3 +105,14 @@ services:
       - 8025:8025
     networks:
       - laravel
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin-note
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - mysql
+    networks:
+      - laravel
